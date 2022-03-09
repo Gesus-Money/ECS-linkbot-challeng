@@ -1,0 +1,32 @@
+#include <linkbot.h>
+CLinkbotI robot1, robot2;
+double radius = 1.75;
+double trackwidth = 3.69;
+
+robot1.driveDistanceNB(2, radius);
+robot2.driveDistanceNB(2, radius);
+robot1.moveWait();
+robot2.moveWait();
+robot1.setJointSpeed(JOINT1, 120);
+robot2.driveDistanceNB(8, radius);
+robot1.delaySeconds(0.8);
+robot1.driveTimeNB(6.99);
+robot2.moveWait();
+robot2.setJointSpeed(JOINT1, 120);
+robot2.driveTimeNB(6.99);
+robot1.delaySeconds(3.9);
+robot1.setJointSpeed(JOINT1, 90);
+robot1.driveDistanceNB(9, radius);
+robot1.moveWait();
+robot2.turnLeft(2, radius, trackwidth);
+robot2.moveWait();
+robot2.setJointSpeed(JOINT1, 90);
+robot1.moveWait();
+robot2.moveWait();
+robot1.turnRight(2.2, radius, trackwidth);
+robot1.moveWait();
+robot2.moveWait();
+robot1.driveDistanceNB(-60, radius);
+robot2.driveDistanceNB(-64, radius);
+robot1.moveWait();
+robot2.moveWait();
